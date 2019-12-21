@@ -96,14 +96,24 @@ public class MainActivity extends AppCompatActivity {
         );
         drawCenter(canvas, paint, horEd.getText().toString());
         canvas.save();
-
-        for (int i = 1; i <= mess.getProgress(); i++) {
-            int x = (int)(Math.random() * 1080);
-            int x2 = (int)(Math.random() * 1080);
-            int y = (int)(Math.random() * 1080);
-            int y2 = (int)(Math.random() * 1080);
-            canvas.drawLine(x, y, x2, y2, paint);
+        for (int j=1;j<=mess.getProgress();j++) {
+            for (int i = 1; i < 25; i++) {
+                int grid = (int) (Math.random() * 50) + 45;
+                int grid2 = (int) (Math.random() * 50) + 45;
+                canvas.drawLine(0, i * grid, 1080, i * grid2, paint);
+                grid = (int) (Math.random() * 50) + 45;
+                grid2 = (int) (Math.random() * 50) + 45;
+                canvas.drawLine(i * grid, 0, i * grid2, 1080, paint);
+            }
         }
+
+//        for (int i = 1; i <= mess.getProgress(); i++) {
+//            int x = (int)(Math.random() * 1080);
+//            int x2 = (int)(Math.random() * 1080);
+//            int y = (int)(Math.random() * 1080);
+//            int y2 = (int)(Math.random() * 1080);
+//            canvas.drawLine(x, y, x2, y2, paint);
+//        }
 
         img.invalidate();
     }

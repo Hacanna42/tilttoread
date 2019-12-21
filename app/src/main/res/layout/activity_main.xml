@@ -54,7 +54,7 @@
         <SeekBar
             android:layout_gravity="center"
             android:id="@+id/mess"
-            android:max="500"
+            android:max="10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
